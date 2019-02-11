@@ -1,0 +1,24 @@
+.App {
+  display: grid;
+  grid-template-rows: 60px 9fr 1fr;
+  grid-template-columns: 1fr 9fr;
+  grid-template-areas:
+          'head head'
+          'sidebar body'
+          'foot foot';
+}
+.Header {
+  grid-area: head;
+}
+
+.Sidebar {
+  grid-area: sidebar;
+}
+
+.Body {
+  grid-area: body;
+}
+
+.Footer {
+  grid-area: foot;
+}

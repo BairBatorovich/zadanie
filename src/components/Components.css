@@ -1,0 +1,34 @@
+.Header {
+    width: 100%;
+    height: 60px;
+    background-color: #0040FF;
+    color: white;
+}
+
+.Sidebar {
+    width: 150px;
+    height: auto;
+    background-color: #2E64FE;
+    color: white;
+    padding: 5px;
+}
+
+.Body {
+    padding: 10px;
+    height: auto;
+    background-color: #5882FA;
+}
+
+.Footer {
+    width: 100%;
+    height: 60px;
+    background-color: #0040FF;
+    color: white;
+}
+.Cnews {
+    height: auto;
+    background-color: #5882FA;
+}
+.News {
+    height: auto;
+}

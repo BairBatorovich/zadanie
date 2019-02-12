@@ -21,8 +21,7 @@ class Npost extends Component {
     };
 
     delnews = () => {
-        const result = window.confirm("Delete");
-        if(result) {
+        if(window.confirm("Delete")) {
             fetch(deleteUrl, {
                 method: 'post',
                 headers: {
@@ -30,8 +29,9 @@ class Npost extends Component {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({"id": this.props.idn})
-            })
-        } else alert("Новость не удалена");
+            });
+            alert("Новость удалена");
+        } else alert("Действие отменено");
 
     };
 

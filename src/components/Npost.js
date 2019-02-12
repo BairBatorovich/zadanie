@@ -3,7 +3,7 @@ import './Components.css';
 
 const deleteUrl="http://testapi.ibb.su/removeNews";
 const edtNews="http://testapi.ibb.su/setNews";
-const getdetNews="testapi.ibb.su/getNewsDetails";
+const getdetNews="http://testapi.ibb.su/getNewsDetails";
 
 class Npost extends Component {
 
@@ -38,7 +38,7 @@ class Npost extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({"id":"5c611d8be0b07548cc55f3bf", "header":"rerererer", "text":"ererererere"})
+            body: JSON.stringify({"id":this.props.idn, "header":"проверка2222", "text":"проверка текст 2222"})
         });
     };
     getdetnews =() => {
@@ -57,27 +57,24 @@ class Npost extends Component {
     };
 
     handleChange(event){
-        const {target:{z, value}} = event;
-        this.setState({z: value});
+        this.setState({z: event.target.value});
         console.log(this.state.z);
         event.preventDefault();
     }
     handleChange1(event){
-        const {target:{t, value}} = event;
-        this.setState({t: value});
+        this.setState({t: event.target.value});
         console.log(this.state.t);
         event.preventDefault();
     }
     handleSubmit(event){
         this.editnews();
-        console.log(this.state.z);
         event.preventDefault();
     }
 
     render() {
         return (
             <div className="Npost" onSubmit={this.handleSubmit}>
-                <textarea rows={1} onChange={this.handleChange} id="z">{this.props.headernews}</textarea>
+                <textarea rows={1} onChange={this.handleChange} id="z" value={this.state.z}>{this.props.headernews}</textarea>
                 <textarea rows={1} onChange={this.handleChange1} id="t">{this.props.textn}</textarea>
                 <button onClick={this.delnews}>Удалить</button>
                 <button onSubmit={this.handleSubmit}>Редактировать</button>

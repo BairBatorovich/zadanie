@@ -11,7 +11,7 @@ class Body extends Component {
             <div>
                 <Route path={"/cnews"} component={Cnews}/>
                 <Route path={"/news"} component={News}/>
-                <Route path={"/edit"} component={Edit}/>
+                <Route path={"/edit"} render = { ()=> <Edit /> }/>
             </div>
         );
     }

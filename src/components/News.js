@@ -7,7 +7,7 @@ const getNews="http://testapi.ibb.su/getNews";
 class News extends Component {
     constructor(props) {
         super(props);
-        this.state = {n: ''};
+        this.state = {news: ''};
 
         this.getnews = this.getnews.bind(this);
     }
@@ -17,16 +17,16 @@ class News extends Component {
         const arr2 = arr1.news;
         const arr3 = arr2.map(el => {
             return (
-                <Npost key={el._id} idn={el._id} headernews={el.header} textn={el.text}/>
+                <Npost key={el._id} idnews={el._id} headernews={el.header} textn={el.text}/>
             )
         });
-        this.setState({n: arr3})
-    }
+        this.setState({news: arr3});
+    };
     render() {
         this.getnews();
         return (
             <div className="News">
-                {this.state.n}
+                {this.state.news}
             </div>
         );
     }

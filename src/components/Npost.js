@@ -21,14 +21,18 @@ class Npost extends Component {
     };
 
     delnews = () => {
-        fetch(deleteUrl, {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({"id": this.props.idn})
-        })
+        const result = window.confirm("Delete");
+        if(result) {
+            fetch(deleteUrl, {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({"id": this.props.idn})
+            })
+        } else alert("Новость не удалена");
+
     };
 
     editnews =() => {

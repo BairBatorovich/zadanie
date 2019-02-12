@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1210e025-8cf4-4e01-94ed-c88ea8e8b3ce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Npost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Npost.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,13 +18,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Npost.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="126" />
+            <state relative-caret-position="204">
+              <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="35" selection-end-column="6" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <element signature="e#671#936#0" />
+                <element signature="n#!!block;n#constructor#0;n#Npost#0" />
                 <element signature="e#959#1277#0" />
                 <element signature="e#1301#1699#0" />
+                <element signature="n#!!block;n#handleChange#0;n#Npost#0" />
+                <element signature="n#!!block;n#handleChange1#0;n#Npost#0" />
+                <element signature="n#!!block;n#handleSubmit#0;n#Npost#0" />
+                <element signature="n#!!block;n#render#0;n#Npost#0" />
               </folding>
             </state>
           </provider>
@@ -171,15 +173,15 @@
       <workItem from="1549857466474" duration="66000" />
       <workItem from="1549857550582" duration="15961000" />
       <workItem from="1549893185858" duration="3831000" />
-      <workItem from="1549933308433" duration="2198000" />
+      <workItem from="1549933308433" duration="3230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98885000" />
+    <option name="totallyTimeSpent" value="99917000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18229167" />
@@ -292,13 +294,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Npost.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="126" />
+        <state relative-caret-position="204">
+          <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="35" selection-end-column="6" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#671#936#0" />
+            <element signature="n#!!block;n#constructor#0;n#Npost#0" />
             <element signature="e#959#1277#0" />
             <element signature="e#1301#1699#0" />
+            <element signature="n#!!block;n#handleChange#0;n#Npost#0" />
+            <element signature="n#!!block;n#handleChange1#0;n#Npost#0" />
+            <element signature="n#!!block;n#handleSubmit#0;n#Npost#0" />
+            <element signature="n#!!block;n#render#0;n#Npost#0" />
           </folding>
         </state>
       </provider>

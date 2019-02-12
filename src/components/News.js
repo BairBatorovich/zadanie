@@ -23,10 +23,9 @@ class News extends Component {
         this.setState({n: arr3})
     }
     render() {
-        /*this.getnews();*/
+        this.getnews();
         return (
             <div className="News">
-                <button onClick={this.getnews}>Получить</button>
                 {this.state.n}
             </div>
         );

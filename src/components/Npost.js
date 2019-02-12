@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Components.css';
+import {NavLink} from "react-router-dom";
 
 const deleteUrl="http://testapi.ibb.su/removeNews";
 const edtNews="http://testapi.ibb.su/setNews";
@@ -80,8 +81,8 @@ class Npost extends Component {
             <div className="Npost" onSubmit={this.handleSubmit}>
                 <h5>{this.props.headernews}</h5>
                 <p>{this.props.textn}</p>
-                <button onClick={this.delnews}>Удалить</button>
-                <button onSubmit={this.handleSubmit}>Редактировать</button>
+                <button onClick={this.delnews}><NavLink to={"/News"}>Удалить</NavLink></button>
+                <button><NavLink to={"/Edit"}>Редактировать</NavLink></button>
             </div>
         );
     }

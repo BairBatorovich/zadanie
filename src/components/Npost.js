@@ -78,8 +78,8 @@ class Npost extends Component {
     render() {
         return (
             <div className="Npost" onSubmit={this.handleSubmit}>
-                <textarea rows={1} onChange={this.handleChange} id="z" value={this.state.z}>{this.props.headernews}</textarea>
-                <textarea rows={1} onChange={this.handleChange1} id="t">{this.props.textn}</textarea>
+                <h5>{this.props.headernews}</h5>
+                <p>{this.props.textn}</p>
                 <button onClick={this.delnews}>Удалить</button>
                 <button onSubmit={this.handleSubmit}>Редактировать</button>
             </div>

@@ -8,7 +8,7 @@
 .Sidebar {
     width: 150px;
     height: auto;
-    background-color: #FAAC58;
+    background-color: #A9E2F3;
     color: white;
     padding: 5px;
 }
@@ -22,9 +22,9 @@
 .Footer {
     width: 100%;
     height: 60px;
-    background-color: #FAAC58;
-    color: white;
+    background-color: #FE9A2E;
 }
+
 .Cnews {
     height: auto;
 }

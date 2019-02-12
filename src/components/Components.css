@@ -1,14 +1,14 @@
 .Header {
     width: 100%;
     height: 60px;
-    background-color: #0040FF;
+    background-color: #FE9A2E;
     color: white;
 }
 
 .Sidebar {
     width: 150px;
     height: auto;
-    background-color: #2E64FE;
+    background-color: #A9D0F5;
     color: white;
     padding: 5px;
 }
@@ -16,13 +16,13 @@
 .Body {
     padding: 10px;
     height: auto;
-    background-color: #5882FA;
+    background-color: #EFF8FB;
 }
 
 .Footer {
     width: 100%;
     height: 60px;
-    background-color: #0040FF;
+    background-color: #FAAC58;
     color: white;
 }
 .Cnews {

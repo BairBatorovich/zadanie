@@ -6,8 +6,8 @@ const createNewsUrl="http://testapi.ibb.su/createNews";
 class Cnews extends Component {
     constructor (props) {
         super(props);
-        this.state = {zagolovok: ''};
-        this.state = {textnews: ''};
+        this.state = {headerNews: ''};
+        this.state = {textNews: ''};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleChange1 = this.handleChange1.bind(this);
@@ -20,22 +20,22 @@ class Cnews extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({"header": this.state.zagolovok, "text": this.state.textnews})
+            body: JSON.stringify({"header": this.state.headerNews, "text": this.state.textNews})
         });
     };
 
     handleChange(event){
-        this.setState({zagolovok: event.target.value});
+        this.setState({headerNews: event.target.value});
         event.preventDefault();
-    };
+    }; //
     handleChange1(event){
-        this.setState({textnews: event.target.value});
+        this.setState({textNews: event.target.value});
         event.preventDefault();
     };
     handleSubmit(event){
         this.createNews();
-        document.getElementById("zagolovok").value = "";
-        document.getElementById("txtnews").value = "";
+        document.getElementById("header").value = "";
+        document.getElementById("txtNews").value = "";
         event.preventDefault();
     };
 
@@ -43,9 +43,9 @@ class Cnews extends Component {
     render() {
         return (
                 <div className="Cnews" onSubmit={this.handleSubmit}>
-                    <input type='text' name={"zn"} id={"zagolovok"} placeholder={"введите заголовок"} value={this.state.zagolovok} onChange={this.handleChange}/>
+                    <input type='text' name={"zn"} id={"header"} placeholder={"введите заголовок"} value={this.state.headerNews} onChange={this.handleChange}/>
                     <p></p>
-                    <input type='text' name={"txtn"} id={"txtnews"} placeholder={"введите текст новости"} value={this.state.textnews} onChange={this.handleChange1}/>
+                    <input type='text' name={"txtn"} id={"txtNews"} placeholder={"введите текст новости"} value={this.state.textNews} onChange={this.handleChange1}/>
                     <p></p>
                     <button onClick={this.handleSubmit}>Добавить</button>
                 </div>

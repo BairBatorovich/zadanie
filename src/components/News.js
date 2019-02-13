@@ -17,7 +17,7 @@ class News extends Component {
         const arr2 = arr1.news;
         const arr3 = arr2.map(el => {
             return (
-                <Npost key={el._id} idnews={el._id} headernews={el.header} textn={el.text}/>
+                <Npost key={el._id} idnews={el._id} headerNews={el.header} textN={el.text}/>
             )
         });
         this.setState({news: arr3});

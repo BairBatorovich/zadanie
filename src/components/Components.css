@@ -3,6 +3,7 @@
     height: 60px;
     background-color: #FE9A2E;
     color: white;
+    padding: 5px;
 }
 
 .Sidebar {
@@ -23,6 +24,7 @@
     width: 100%;
     height: 60px;
     background-color: #FE9A2E;
+    padding: 5px;
 }
 
 .Cnews {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Components.css';
-import {NavLink} from "react-router-dom";
 import Modal from 'react-modal';
 
 const deleteUrl="http://testapi.ibb.su/removeNews";
@@ -12,7 +11,7 @@ class Npost extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {headerNews: ''};
+        this.state = {headerNews: 'заголовок'};
         this.state = {textNews: ''};
         this.state={modalIsOpen:false};
         this.state={modalIsOpenEdit:false};
@@ -25,6 +24,10 @@ class Npost extends Component {
 
         this.openModalEdit = this.openModalEdit.bind(this);
         this.closeModalEdit = this.closeModalEdit.bind(this);
+
+        this.handleChangeHeader = this.handleChangeHeader.bind(this);
+        this.handleChangeText = this.handleChangeText.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     };
 
     delnews = () => {
@@ -45,9 +48,9 @@ class Npost extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({"id":"5c5ee5cde0b07548cc55f3bd", "header":"заголовок2222", "text":"Текст текст 2222"})
-        })
-    }
+            body: JSON.stringify({"id":this.props.idNews, "header": this.state.headerNews, "text":this.state.textNews})
+        });
+    };
 
     openModal() {
         this.setState({modalIsOpen: true});
@@ -62,6 +65,23 @@ class Npost extends Component {
     closeModalEdit() {
         this.setState({modalIsOpenEdit: false});
     }
+
+    handleChangeHeader(event){
+        this.setState({headerNews: event.target.value});
+        console.log(this.state.headerNews);
+        event.preventDefault();
+    };
+    handleChangeText(event){
+        this.setState({textNews: event.target.value});
+        event.preventDefault();
+    };
+    handleSubmit(event){
+        this.setState({headerNews: document.getElementById("header").value=""});
+        this.setState({textNews: document.getElementById("txtNews").value=""});
+        debugger;
+        this.editnews();
+        event.preventDefault();
+    };
 
     render() {
         return (
@@ -88,13 +108,15 @@ class Npost extends Component {
                 <Modal
                     isOpen={this.state.modalIsOpenEdit}
                     onRequestClose={this.closeModalEdit}
-                    contentLabel="Example Modal"
                     className="ModalEdit"
+                    onSubmit={this.handleSubmit}
                 >
                     <h5>Редактирование</h5>
-                    <textarea>Заголовок</textarea>
-                    <button onClick={this.editnews()}>Да</button>
-                    <button onClick={this.closeModalEdit}>Нет</button>
+                    <textarea className="txtEdit" value={this.state.headerNews} id="header" onChange={this.handleChangeHeader}>{this.props.headerNews}</textarea>
+                    <textarea className="txtEdit" value={this.state.textNews} id="txtNews" onChange={this.handleChangeText}>{this.props.textN}</textarea>
+
+                    <button onClick={this.handleSubmit}>Сохранить</button>
+                    <button onClick={this.closeModalEdit}>Отмена</button>
                 </Modal>
 
             </div>

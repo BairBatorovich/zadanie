@@ -24,14 +24,17 @@ class Cnews extends Component {
         });
     };
 
+    /*присваивает переменной headerNews значение поля textarea*/
     handleChange(event){
         this.setState({headerNews: event.target.value});
         event.preventDefault();
-    }; //
+    };
+    /*присваивает переменной textNews значение поля textarea*/
     handleChange1(event){
         this.setState({textNews: event.target.value});
         event.preventDefault();
     };
+    /*вызывется метод createNews и очищается текстовое поле*/
     handleSubmit(event){
         this.createNews();
         document.getElementById("header").value = "";
@@ -43,11 +46,11 @@ class Cnews extends Component {
     render() {
         return (
                 <div className="Cnews" onSubmit={this.handleSubmit}>
-                    <input type='text' name={"zn"} id={"header"} placeholder={"введите заголовок"} value={this.state.headerNews} onChange={this.handleChange}/>
+                    <input type='text' name={"zn"} id={"header"} placeholder={"введите заголовок"} value={this.state.headerNews} onChange={this.handleChange}/> {/*при изменении текстового поля вызывается метод handleChange*/}
                     <p></p>
                     <input type='text' name={"txtn"} id={"txtNews"} placeholder={"введите текст новости"} value={this.state.textNews} onChange={this.handleChange1}/>
                     <p></p>
-                    <button onClick={this.handleSubmit}>Добавить</button>
+                    <button onClick={this.handleSubmit}>Добавить</button> {/*вызывается метод handleSubmit при шелчке левой кнопки мыши по кнопке*/}
                 </div>
         );
     }

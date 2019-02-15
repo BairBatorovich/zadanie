@@ -30,17 +30,7 @@ class Npost extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
-    delnews = () => {
-            fetch(deleteUrl, {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({"id": this.props.idNews})
-            });
-        this.closeModal();
-    };
+    /*сохранения отредактированной новости на сервер*/
     editnews =() => {
         fetch(edtNews, {
             method: 'post',
@@ -52,17 +42,32 @@ class Npost extends Component {
         });
         this.closeModalEdit();
     };
+    /*удаление новости по id*/
+    delnews = () => {
+            fetch(deleteUrl, {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({"id": this.props.idNews})
+            });
+        this.closeModal();
+    };
 
+    /*открытие модального окна удаления*/
     openModal() {
         this.setState({modalIsOpen: true});
     }
+    /*закрытие модального окна удаления*/
     closeModal() {
         this.setState({modalIsOpen: false});
     }
-
+    /*открытие модального окна редактирования*/
     openModalEdit() {
         this.setState({modalIsOpenEdit: true});
     }
+    /*закрытие модального окна редактирования*/
     closeModalEdit() {
         this.setState({modalIsOpenEdit: false});
     }
@@ -93,6 +98,7 @@ class Npost extends Component {
                 <button onClick={this.openModalEdit}>Редактировать</button>
                 <button onClick={this.openModal}>Удалить</button>
 
+                {/*модальное окно удаления новости*/}
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
@@ -105,7 +111,7 @@ class Npost extends Component {
                     <button onClick={this.delnews}>Да</button>
                     <button onClick={this.closeModal}>Отмена</button>
                 </Modal>
-
+                {/*модальное окно редактирования новости*/}
                 <Modal
                     isOpen={this.state.modalIsOpenEdit}
                     onRequestClose={this.closeModalEdit}

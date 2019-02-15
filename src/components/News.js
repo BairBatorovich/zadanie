@@ -12,6 +12,8 @@ class News extends Component {
         this.getnews = this.getnews.bind(this);
     }
 
+    /*получаю данные с сервера данные в массив arr далее создается массив компонентов "Npost"
+    в переменную news с помощью map. в рендере выводится массив news*/
     getnews = async () => {
         const arr1 = await fetch(getNews,).then(result => result.json());
         const arr2 = arr1.news;

@@ -7,16 +7,18 @@
 }
 
 .Sidebar {
+    float: left;
+    height: 100%;
     width: 200px;
-    height: auto;
     background-color: #A9E2F3;
     color: white;
     padding: 5px;
 }
 
 .Body {
+    float: left;
+    height: 100%;
     padding: 10px;
-    height: auto;
     background-color: #EFF8FB;
 }
 
@@ -34,24 +36,30 @@
     height: auto;
 }
 .Modal {
+    background-color: #81BEF7;
     position: absolute;
     top: 150px;
     left: 200px;
-    background-color: white;
     text-align: center;
     width: 180px;
     height: 120px;
 }
 .ModalEdit {
+    background-color: #81BEF7;
     position: absolute;
-    top: 150px;
+    top: 100px;
     left: 200px;
-    background-color: white;
     text-align: center;
-    width: 220px;
+    width: 800px;
     height: 400px;
 }
-.txtEdit {
+.txtEditHeader {
+     position: center;
+     width: 790px;
+     height: 20px;
+ }
+.txtEditText {
     position: center;
-    width: 190px;
+    width: 790px;
+    height: 270px;
 }

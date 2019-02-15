@@ -50,6 +50,7 @@ class Npost extends Component {
             },
             body: JSON.stringify({"id":this.props.idNews, "header": this.state.headerNews, "text":this.state.textNews})
         });
+        this.closeModalEdit();
     };
 
     openModal() {
@@ -112,11 +113,10 @@ class Npost extends Component {
                     onSubmit={this.handleSubmit}
                 >
                     <h5>Редактирование</h5>
-                    <textarea className="txtEdit" value={this.state.headerNews} id="header" onChange={this.handleChangeHeader}>{this.props.headerNews}</textarea>
-                    <textarea className="txtEdit" value={this.state.textNews} id="txtNews" onChange={this.handleChangeText}>{this.props.textN}</textarea>
+                    <textarea className="txtEditHeader" value={this.state.headerNews} id="header" onChange={this.handleChangeHeader}>{this.props.headerNews}</textarea>
+                    <textarea className="txtEditText" value={this.state.textNews} id="txtNews" onChange={this.handleChangeText}>{this.props.textN}</textarea>
 
                     <button onClick={this.handleSubmit}>Сохранить</button>
-                    <button onClick={this.closeModalEdit}>Отмена</button>
                 </Modal>
 
             </div>

@@ -9,6 +9,7 @@ class Cnews extends Component {
         super(props);
         this.state = {headerNews: ''};
         this.state = {textNews: ''};
+        this.state = {otvet: ''};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleChange1 = this.handleChange1.bind(this);
@@ -26,8 +27,12 @@ class Cnews extends Component {
         });
     };
     /*AXIOS*/
-    createNewsAxios = () => {
-        Axios.post(createNewsUrl, {"header": this.state.headerNews, "text":this.state.textNews})
+    createNewsAxios = async() => {
+        await Axios.post(createNewsUrl, {"header": this.state.headerNews, "text":this.state.textNews})
+            .then(response => {this.setState({otvet: response.data.success});
+            console.log(this.state.otvet)});
+        document.getElementById("header").value = "";
+        document.getElementById("txtNews").value = "";
     };
     /*присваивает переменной headerNews значение поля textarea*/
     handleChange(event){
@@ -42,8 +47,8 @@ class Cnews extends Component {
     /*вызывется метод createNews и очищается текстовое поле*/
     handleSubmit(event){
         this.createNewsAxios();
-        document.getElementById("header").value = "";
-        document.getElementById("txtNews").value = "";
+        /*document.getElementById("header").value = "";
+        document.getElementById("txtNews").value = "";*/
         event.preventDefault(); /*отмена действия по умолчанию*/
     };
 

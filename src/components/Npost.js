@@ -67,12 +67,7 @@ class Npost extends Component {
         this.closeModalEdit();
     };
     delnewsAxios = () => {
-        Axios.post(
-            deleteUrl,
-            {
-                "id": this.props.idNews
-            }
-        )
+        Axios.post(deleteUrl,{"id": this.props.idNews})
     };
 
     /*открытие модального окна удаления*/

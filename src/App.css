@@ -1,24 +1,34 @@
 .App {
-  display: grid;
-  grid-template-rows: 60px 9fr 1fr;
-  grid-template-columns: 1fr 9fr;
-  grid-template-areas:
-          'head head'
-          'sidebar body'
-          'foot foot';
+    display: grid;
+    grid-template-rows: 1fr 13fr 1fr;
+    grid-template-columns: 1fr 9fr;
+    grid-template-areas:
+            'head head'
+            'sidebar body'
+            'foot foot';
 }
 .Header {
-  grid-area: head;
+    grid-area: head;
+    width: 100%;
+    height: 60px;
 }
 
 .Sidebar {
-  grid-area: sidebar;
+    float: left;
+    height: 100%;
+    width: 100%;
+    grid-area: sidebar;
 }
 
 .Body {
-  grid-area: body;
+    float: left;
+    height: 100%;
+    width: 100%;
+    grid-area: body;
 }
 
 .Footer {
-  grid-area: foot;
+    width: 100%;
+    height: 60px;
+    grid-area: foot;
 }

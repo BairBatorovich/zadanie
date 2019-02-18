@@ -1,40 +1,37 @@
 import React, { Component } from 'react';
 import './Components.css';
+import Modal from 'react-modal';
+import Axios from 'axios';
 
 const deleteUrl="http://testapi.ibb.su/removeNews";
 const edtNews="http://testapi.ibb.su/setNews";
 const getdetNews="http://testapi.ibb.su/getNewsDetails";
 
+
 class Npost extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {z: ''};
-        this.state = {t: ''};
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleChange1 = this.handleChange1.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {headerNews: 'заголовок'};
+        this.state = {textNews: ''};
+        this.state={modalIsOpen:false};
+        this.state={modalIsOpenEdit:false};
 
         this.delnews = this.delnews.bind(this);
         this.editnews = this.editnews.bind(this);
+
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+
+        this.openModalEdit = this.openModalEdit.bind(this);
+        this.closeModalEdit = this.closeModalEdit.bind(this);
+
+        this.handleChangeHeader = this.handleChangeHeader.bind(this);
+        this.handleChangeText = this.handleChangeText.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     };
 
-    delnews = () => {
-        if(window.confirm("Delete")) {
-            fetch(deleteUrl, {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({"id": this.props.idn})
-            });
-            alert("Новость удалена");
-        } else alert("Действие отменено");
-
-    };
-
+    /* FETCH сохранения отредактированной новости на сервер*/
     editnews =() => {
         fetch(edtNews, {
             method: 'post',
@@ -42,46 +39,106 @@ class Npost extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({"id":this.props.idn, "header":"проверка2222", "text":"проверка текст 2222"})
+            body: JSON.stringify({"id":this.props.idNews, "header": this.state.headerNews, "text":this.state.textNews})
         });
+        this.closeModalEdit();
     };
-    getdetnews =() => {
-        fetch(getdetNews, {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({"id":"5c501011418c4446a3cc1ccd"})
-        })
-            .then(result => result.json())
-            .then(data => {
-                console.log(data);
-            })
+    /*удаление новости по id*/
+    delnews = () => {
+            fetch(deleteUrl, {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({"id": this.props.idNews})
+            });
+        this.closeModal();
     };
 
-    handleChange(event){
-        this.setState({z: event.target.value});
-        console.log(this.state.z);
-        event.preventDefault();
+    /*AXIOS*/
+    editnewsAxios = () => {
+        Axios.post(
+            edtNews,
+            {
+                "id": this.props.idNews, "header": this.state.headerNews, "text":this.state.textNews
+            }
+            )
+        this.closeModalEdit();
+    };
+    delnewsAxios = () => {
+        Axios.post(deleteUrl,{"id": this.props.idNews})
+    };
+
+    /*открытие модального окна удаления*/
+    openModal() {
+        this.setState({modalIsOpen: true});
     }
-    handleChange1(event){
-        this.setState({t: event.target.value});
-        console.log(this.state.t);
-        event.preventDefault();
+    /*закрытие модального окна удаления*/
+    closeModal() {
+        this.setState({modalIsOpen: false});
     }
+    /*открытие модального окна редактирования*/
+    openModalEdit() {
+        this.setState({modalIsOpenEdit: true});
+    }
+    /*закрытие модального окна редактирования*/
+    closeModalEdit() {
+        this.setState({modalIsOpenEdit: false});
+    }
+
+    handleChangeHeader(event){
+        this.setState({headerNews: event.target.value});
+        console.log(this.state.headerNews);
+        event.preventDefault(); /*отмена действия по умолчанию*/
+    };
+    handleChangeText(event){
+        this.setState({textNews: event.target.value});
+        event.preventDefault(); /*отмена действия по умолчанию*/
+    };
     handleSubmit(event){
-        this.editnews();
-        event.preventDefault();
-    }
+        this.setState({headerNews: document.getElementById("header").value=""});
+        this.setState({textNews: document.getElementById("txtNews").value=""});
+        this.editnewsAxios();
+        event.preventDefault(); /*отмена действия по умолчанию*/
+    };
 
     render() {
         return (
-            <div className="Npost" onSubmit={this.handleSubmit}>
-                <h5>{this.props.headernews}</h5>
-                <p>{this.props.textn}</p>
-                <button onClick={this.delnews}>Удалить</button>
-                <button onSubmit={this.handleSubmit}>Редактировать</button>
+            <div className="Npost">
+                <h5>{this.props.headerNews}</h5>
+                <p>{this.props.textN}</p>
+
+                <button onClick={this.openModalEdit}>Редактировать</button>
+                <button onClick={this.openModal}>Удалить</button>
+
+                {/*модальное окно удаления новости*/}
+                <Modal
+                    isOpen={this.state.modalIsOpen}
+                    onAfterOpen={this.afterOpenModal}
+                    onRequestClose={this.closeModal}
+                    contentLabel="Example Modal"
+                    className="Modal"
+                >
+
+                    <h2>Удалить</h2>
+                    <button onClick={this.delnewsAxios}>Да</button>
+                    <button onClick={this.closeModal}>Отмена</button>
+                </Modal>
+                {/*модальное окно редактирования новости*/}
+                <Modal
+                    isOpen={this.state.modalIsOpenEdit}
+                    onRequestClose={this.closeModalEdit}
+                    className="ModalEdit"
+                    onSubmit={this.handleSubmit}
+                >
+                    <h5>Редактирование</h5>
+                    <textarea className="txtEditHeader" value={this.state.headerNews} id="header" onChange={this.handleChangeHeader}>{this.props.headerNews}</textarea>
+                    <textarea className="txtEditText" value={this.state.textNews} id="txtNews" onChange={this.handleChangeText}>{this.props.textN}</textarea>
+
+                    <button onClick={this.handleSubmit}>Сохранить</button>
+                </Modal>
+
             </div>
         );
     }

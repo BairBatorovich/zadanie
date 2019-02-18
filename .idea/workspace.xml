@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1210e025-8cf4-4e01-94ed-c88ea8e8b3ce" name="Default Changelist" comment="" />
+    <list default="true" id="1210e025-8cf4-4e01-94ed-c88ea8e8b3ce" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/Cnews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cnews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Npost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Npost.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -16,27 +19,52 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Npost.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="81" column="41" selection-start-line="81" selection-start-column="41" selection-end-line="81" selection-end-column="41" />
+            <state relative-caret-position="125">
+              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <element signature="n#!!block;n#constructor#0;n#Npost#0" />
-                <element signature="e#671#1014#0" />
-                <element signature="e#959#1277#0" />
-                <element signature="e#1301#1699#0" />
-                <element signature="n#!!block;n#handleChange#0;n#Npost#0" />
-                <element signature="n#!!block;n#handleChange1#0;n#Npost#0" />
+                <element signature="e#1562#1890#0" />
+                <element signature="e#1933#2155#0" />
+                <element signature="e#2182#2310#0" />
+                <element signature="n#!!block;n#openModal#0;n#Npost#0" />
+                <element signature="n#!!block;n#closeModal#0;n#Npost#0" />
+                <element signature="n#!!block;n#openModalEdit#0;n#Npost#0" />
+                <element signature="n#!!block;n#closeModalEdit#0;n#Npost#0" />
+                <element signature="n#!!block;n#handleChangeHeader#0;n#Npost#0" />
+                <element signature="n#!!block;n#handleChangeText#0;n#Npost#0" />
                 <element signature="n#!!block;n#handleSubmit#0;n#Npost#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/Components.css">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/News.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+            <state relative-caret-position="225">
+              <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+                <element signature="n#!!block;n#constructor#0;n#News#0" />
+                <element signature="e#590#918#0" />
+                <element signature="n#!!block;n#render#0;n#News#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Cnews.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="49" column="10" selection-start-line="49" selection-start-column="8" selection-end-line="50" selection-end-column="56" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#529#839#0" />
+                <element signature="n#!!block;n#handleChange#0;n#Cnews#0" />
+                <element signature="n#!!block;n#handleChange1#0;n#Cnews#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,15 +87,17 @@
       <list>
         <option value="$PROJECT_DIR$/src/components/Footer.js" />
         <option value="$PROJECT_DIR$/src/components/Header.js" />
-        <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/CreateNews.js" />
         <option value="$PROJECT_DIR$/src/components/Sidebar.js" />
+        <option value="$PROJECT_DIR$/src/components/Edit.js" />
+        <option value="$PROJECT_DIR$/src/components/Modal/DelModal.js" />
+        <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/components/Components.css" />
         <option value="$PROJECT_DIR$/src/components/Body.js" />
         <option value="$PROJECT_DIR$/src/components/News.js" />
-        <option value="$PROJECT_DIR$/src/components/Cnews.js" />
         <option value="$PROJECT_DIR$/src/components/Npost.js" />
-        <option value="$PROJECT_DIR$/src/components/Components.css" />
+        <option value="$PROJECT_DIR$/src/components/Cnews.js" />
       </list>
     </option>
   </component>
@@ -180,16 +210,26 @@
       <workItem from="1549857466474" duration="66000" />
       <workItem from="1549857550582" duration="15961000" />
       <workItem from="1549893185858" duration="3831000" />
-      <workItem from="1549933308433" duration="5521000" />
+      <workItem from="1549933308433" duration="12876000" />
+      <workItem from="1549980524178" duration="463000" />
+      <workItem from="1550018138438" duration="12542000" />
+      <workItem from="1550105963691" duration="2695000" />
+      <workItem from="1550110452000" duration="80000" />
+      <workItem from="1550110841608" duration="11085000" />
+      <workItem from="1550135903326" duration="3326000" />
+      <workItem from="1550155617830" duration="2758000" />
+      <workItem from="1550193085870" duration="5726000" />
+      <workItem from="1550367153661" duration="2197000" />
+      <workItem from="1550392691284" duration="3991000" />
+      <workItem from="1550450000367" duration="3833000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102208000" />
+    <option name="totallyTimeSpent" value="158259000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18229167" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -197,15 +237,15 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.04901961" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.04901961" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32843137" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32843137" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.18954249" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -215,6 +255,39 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/components/modal/DelModal.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/Edit.js" />
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Components.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Body.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="62" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="162" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Footer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -235,84 +308,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Sidebar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="59" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Body.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Cnews.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="154" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="n#!!block;n#handleSubmit#0;n#Cnews#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/News.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="n#!!block;n#constructor#0;n#News#0" />
-            <element signature="n#!!block;n#render#0;n#News#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Npost.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="81" column="41" selection-start-line="81" selection-start-column="41" selection-end-line="81" selection-end-column="41" />
+        <state relative-caret-position="125">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
             <element signature="n#!!block;n#constructor#0;n#Npost#0" />
-            <element signature="e#671#1014#0" />
-            <element signature="e#959#1277#0" />
-            <element signature="e#1301#1699#0" />
-            <element signature="n#!!block;n#handleChange#0;n#Npost#0" />
-            <element signature="n#!!block;n#handleChange1#0;n#Npost#0" />
+            <element signature="e#1562#1890#0" />
+            <element signature="e#1933#2155#0" />
+            <element signature="e#2182#2310#0" />
+            <element signature="n#!!block;n#openModal#0;n#Npost#0" />
+            <element signature="n#!!block;n#closeModal#0;n#Npost#0" />
+            <element signature="n#!!block;n#openModalEdit#0;n#Npost#0" />
+            <element signature="n#!!block;n#closeModalEdit#0;n#Npost#0" />
+            <element signature="n#!!block;n#handleChangeHeader#0;n#Npost#0" />
+            <element signature="n#!!block;n#handleChangeText#0;n#Npost#0" />
             <element signature="n#!!block;n#handleSubmit#0;n#Npost#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Components.css">
+    <entry file="file://$PROJECT_DIR$/src/components/News.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        <state relative-caret-position="225">
+          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#News#0" />
+            <element signature="e#590#918#0" />
+            <element signature="n#!!block;n#render#0;n#News#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Cnews.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="49" column="10" selection-start-line="49" selection-start-column="8" selection-end-line="50" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#529#839#0" />
+            <element signature="n#!!block;n#handleChange#0;n#Cnews#0" />
+            <element signature="n#!!block;n#handleChange1#0;n#Cnews#0" />
+          </folding>
         </state>
       </provider>
     </entry>

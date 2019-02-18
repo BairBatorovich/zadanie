@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Components.css';
 import Modal from 'react-modal';
+import Axios from 'axios';
 
 const deleteUrl="http://testapi.ibb.su/removeNews";
 const edtNews="http://testapi.ibb.su/setNews";
@@ -30,7 +31,7 @@ class Npost extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
-    /*сохранения отредактированной новости на сервер*/
+    /* FETCH сохранения отредактированной новости на сервер*/
     editnews =() => {
         fetch(edtNews, {
             method: 'post',
@@ -55,6 +56,25 @@ class Npost extends Component {
         this.closeModal();
     };
 
+    /*AXIOS*/
+    editnewsAxios = () => {
+        Axios.post(
+            edtNews,
+            {
+                "id": this.props.idNews, "header": this.state.headerNews, "text":this.state.textNews
+            }
+            )
+        this.closeModalEdit();
+    };
+    delnewsAxios = () => {
+        Axios.post(
+            deleteUrl,
+            {
+                "id": this.props.idNews
+            }
+        )
+    };
+
     /*открытие модального окна удаления*/
     openModal() {
         this.setState({modalIsOpen: true});
@@ -75,18 +95,17 @@ class Npost extends Component {
     handleChangeHeader(event){
         this.setState({headerNews: event.target.value});
         console.log(this.state.headerNews);
-        event.preventDefault();
+        event.preventDefault(); /*отмена действия по умолчанию*/
     };
     handleChangeText(event){
         this.setState({textNews: event.target.value});
-        event.preventDefault();
+        event.preventDefault(); /*отмена действия по умолчанию*/
     };
     handleSubmit(event){
         this.setState({headerNews: document.getElementById("header").value=""});
         this.setState({textNews: document.getElementById("txtNews").value=""});
-        debugger;
-        this.editnews();
-        event.preventDefault();
+        this.editnewsAxios();
+        event.preventDefault(); /*отмена действия по умолчанию*/
     };
 
     render() {
@@ -108,7 +127,7 @@ class Npost extends Component {
                 >
 
                     <h2>Удалить</h2>
-                    <button onClick={this.delnews}>Да</button>
+                    <button onClick={this.delnewsAxios}>Да</button>
                     <button onClick={this.closeModal}>Отмена</button>
                 </Modal>
                 {/*модальное окно редактирования новости*/}
